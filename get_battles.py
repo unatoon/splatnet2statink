@@ -740,4 +740,5 @@ if __name__ == "__main__":
     else:  # normal mode
         results = get_battles()
         battles = [get_battle(result['battle_number']) for result in results]
-        print(json.dumps(battles, ensure_ascii=False))
+        with open('results.json', 'w') as f:
+            f.write(json.dumps(battles, ensure_ascii=False))
