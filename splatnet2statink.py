@@ -11,18 +11,27 @@ from builtins import zip
 from builtins import str
 from builtins import range
 from past.utils import old_div
-import os.path, argparse, sys
-import requests, json, time, datetime, random, re
-import msgpack, uuid
-import iksm, dbs, salmonrun
+import os.path
+import argparse
+import sys
+import requests
+import json
+import time
+import datetime
+import random
+import re
+import msgpack
+import uuid
 from io import BytesIO
 from operator import itemgetter
 
-try:
-    from packaging import version
-except ModuleNotFoundError as e:
-    version = None
+from packaging import version
 from subprocess import call
+
+import iksm
+import dbs
+import salmonrun
+
 
 # PIL/Pillow imported at bottom
 
@@ -69,7 +78,8 @@ USER_LANG = config_data[
 ]  # only works with your game region's supported languages
 #########################
 
-debug = False  # print out payload and exit. can use with geargrabber2.py & saving battle jsons
+# print out payload and exit. can use with geargrabber2.py & saving battle jsons
+debug = False
 
 if "app_timezone_offset" in config_data:
     app_timezone_offset = str(config_data["app_timezone_offset"])
@@ -272,7 +282,8 @@ def set_language():
 
 
 def check_for_updates():
-    """Checks the version of the script against the latest version in the repo and updates dbs.py."""
+    """Checks the version of the script against
+    the latest version in the repo and updates dbs.py."""
 
     if version is None:
         print("\n!! Unable to check for updates due to a new dependency in v1.6.0.")
