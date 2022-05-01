@@ -7,21 +7,15 @@ from __future__ import unicode_literals
 from __future__ import print_function
 from __future__ import division
 from builtins import input
-from builtins import zip
 from builtins import str
 from builtins import range
-from past.utils import old_div
 import os.path
 import argparse
 import sys
 import requests
 import json
 import time
-import datetime
-import random
 import re
-import uuid
-from io import BytesIO
 from operator import itemgetter
 
 from packaging import version
